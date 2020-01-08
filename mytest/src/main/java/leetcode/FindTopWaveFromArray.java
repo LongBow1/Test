@@ -1,4 +1,4 @@
-package com.owner.me.mytest;
+package leetcode;
 
 public class FindTopWaveFromArray {
 

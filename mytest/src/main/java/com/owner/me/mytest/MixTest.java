@@ -1,11 +1,23 @@
 package com.owner.me.mytest;
 
+import com.sun.xml.internal.ws.api.client.WSPortInfo;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class MixTest {
     public static void main(String[] args){
         String str = "testlength";
+
+        for(int i =0; i< 10; i++){
+            for(int j=0; j< 10; j++){
+                if(j == 2){
+                    System.out.println(i);
+                    System.out.println(j);
+                    return;
+                }
+            }
+        }
 
         int a32 = 3*1024*1024;
         System.out.println(a32);

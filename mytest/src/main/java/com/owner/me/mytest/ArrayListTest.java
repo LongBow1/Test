@@ -7,6 +7,8 @@ import java.util.List;
 public class ArrayListTest {
 
     public static void main(String[] args){
+        int a = 10;
+        System.out.println(a >> 1);
         List<String> arr1 = new ArrayList<>();
         arr1.add("1");
         arr1.add("2");

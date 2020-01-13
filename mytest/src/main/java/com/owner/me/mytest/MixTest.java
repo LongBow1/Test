@@ -7,6 +7,8 @@ import java.util.List;
 
 public class MixTest {
     public static void main(String[] args){
+
+
         String str = "testlength";
 
         for(int i =0; i< 10; i++){

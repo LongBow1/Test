@@ -1,6 +1,7 @@
 package com.owner.me.mytest;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -9,6 +10,8 @@ public class ArrayListTest {
     public static void main(String[] args){
         int a = 10;
         System.out.println(a >> 1);
+
+        Arrays.asList();
         List<String> arr1 = new ArrayList<>();
         arr1.add("1");
         arr1.add("2");

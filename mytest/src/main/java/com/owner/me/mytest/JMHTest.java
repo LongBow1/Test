@@ -9,10 +9,18 @@ public class JMHTest {
 
     static int testCount = 10000000;
 
+    static {
+        i = 0;
+    }
+
+    static int i = 1;
+
     public static void main(String[] args) {
+        JMHTest jmhTest = new JMHTest();
         testLinkList();
         testArrayList();
         testArrayListInitSize();
+        System.out.println(i);
 
     }
 

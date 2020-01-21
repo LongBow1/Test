@@ -21,6 +21,7 @@ public class ClassLoaderTest {
                     throw new ClassNotFoundException(name);
                 }
             }
+
         };
         Object obj = null;
         try {

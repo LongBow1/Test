@@ -7,9 +7,22 @@ import java.util.List;
 
 public class ArrayListTest {
 
+    static Integer bb2 = 20;
+    static synchronized void test(){
+
+    }
+
     public static void main(String[] args){
         int a = 10;
         System.out.println(a >> 1);
+
+        Integer aa = 10;
+        System.out.println(aa);
+
+        synchronized (aa){
+
+        }
+
 
         Arrays.asList();
         List<String> arr1 = new ArrayList<>();

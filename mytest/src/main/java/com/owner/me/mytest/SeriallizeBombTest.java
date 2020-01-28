@@ -8,13 +8,16 @@ import java.util.Set;
 
 public class SeriallizeBombTest {
 
+    final static BombObject a = new BombObject();
+
     public static void main(String[] args) {
 
+        System.out.println(a);
         String filePath = "serializeBombTest.txt";
         BombObject bombObject = new BombObject();
-        saveObject(bombObject,filePath);
-        Object bombObjectV2 = readObject(filePath);
-        System.out.println(bombObjectV2);
+        //saveObject(bombObject,filePath);
+        //Object bombObjectV2 = readObject(filePath);
+        System.out.println(bombObject);
     }
 
     static class BombObject implements Serializable{
@@ -29,7 +32,7 @@ public class SeriallizeBombTest {
             System.out.println(new HashSet<String>().hashCode() == new HashSet<Integer>().hashCode());
             root.add(s1);
             root.add(s2);
-            for (int i =0; i< 100 ;i++){
+            for (int i =0; i< 1 ;i++){
                 Set<Object> ts1 = new HashSet<>();
                 Set<Object> ts2 = new HashSet<>();
                 ts1.add("bomb");
@@ -44,6 +47,7 @@ public class SeriallizeBombTest {
             s1.add("bomb2");
             s2.add("bomb1");
             s2.add("bomb2");
+            System.out.println("reading...");
         }
     }
 

@@ -1,6 +1,8 @@
 package com.owner.me.mytest;
 
 import java.lang.instrument.Instrumentation;
+import java.lang.management.ManagementFactory;
+import java.lang.reflect.Method;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +58,28 @@ public class GetObjectSizeTest {
     }
 
     public static void main(String[] args) {
+
+        //RamUsageEstimator.
+        int objectAlignment = 2;
+        try {
+            final Class<?> beanClazz = Class.forName("com.sun.management.HotSpotDiagnosticMXBean");
+            final Object hotSpotBean = ManagementFactory.newPlatformMXBeanProxy(
+                    ManagementFactory.getPlatformMBeanServer(),
+                    "com.sun.management:type=HotSpotDiagnostic",
+                    beanClazz
+            );
+            final Method getVMOptionMethod = beanClazz.getMethod("getVMOption", String.class);
+            final Object vmOption = getVMOptionMethod.invoke(hotSpotBean, "ObjectAlignmentInBytes");
+            System.out.println(objectAlignment);
+            objectAlignment = Integer.parseInt(
+                    vmOption.getClass().getMethod("getValue").invoke(vmOption).toString()
+            );
+            System.out.println(objectAlignment);
+            //supportedFeatures.add(JvmFeature.OBJECT_ALIGNMENT);
+        } catch (Exception e) {
+            // Ignore.
+        }
+
 
         Random random = new Random();
 

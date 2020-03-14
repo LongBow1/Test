@@ -16,6 +16,7 @@ public class JMHTest {
     static int i = 1;
 
     public static void main(String[] args) {
+        List<Number> numbers = new ArrayList<>();
         JMHTest jmhTest = new JMHTest();
         testLinkList();
         testArrayList();

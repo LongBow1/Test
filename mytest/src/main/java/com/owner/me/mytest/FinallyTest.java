@@ -12,23 +12,29 @@ public class FinallyTest {
         };
         Thread thread1 = new Thread(runnable);
         Thread thread2 = new Thread(runnable);
-        thread1.start();
-        thread2.start();
+        //thread1.start();
+        //thread2.start();
 
         System.out.println(tryCatchFinallyTest());
     }
 
     static int tryCatchFinallyTest(){
+        int result = 0;
         try {
             System.out.println("try block");
-            return 1;
+            result++;
+            //throw new Exception("test exception");
+            return result;
 
         }catch (Exception ex){
+            result++;
             System.out.println("exception");
-            return 2;
+            return result;
         }finally {
+            result++;
             System.out.println("finally");
-            return 3;
+            //return result;
+            //return 3;
         }
     }
 }

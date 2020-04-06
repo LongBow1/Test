@@ -31,6 +31,9 @@ public class ArrayListTest {
         List<String> arr2 = new ArrayList<>();
         arr2.add("2");
         arr2.add("1");
+        String[] arr1arr = new String[2];
+        arr1.toArray(arr1arr);
+        System.out.println(arr1arr);
         for (String s : arr1){
             if(s.equalsIgnoreCase("1")){
                 arr1.remove(s);

@@ -8,6 +8,14 @@ import java.util.List;
 public class MixTest {
     public static void main(String[] args){
 
+        int[] arra = {1,2,3};
+        System.out.println(arra.length);
+        int ii = 0,jj=0;
+        int a = ii++, b =++jj;
+        System.out.println(ii);
+        System.out.println(jj);
+        System.out.println(a);
+        System.out.println(b);
 
         String str = "testlength";
 

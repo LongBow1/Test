@@ -9,6 +9,7 @@ public class MixTest {
     public static void main(String[] args) {
         Set<EqualsObject> hashSet = new HashSet<>();
 
+        Integer[] aar = {12,3};
         EqualsObject a = new EqualsObject(1,"one");
         EqualsObject b = new EqualsObject(1,"one");
         EqualsObject c = new EqualsObject(1,"one");

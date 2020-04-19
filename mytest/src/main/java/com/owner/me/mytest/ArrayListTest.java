@@ -20,6 +20,8 @@ public class ArrayListTest {
 
         }
 
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.iterator();
 
         Arrays.asList();
         List<String> arr1 = new ArrayList<>();

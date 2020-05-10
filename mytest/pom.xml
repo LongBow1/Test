@@ -200,6 +200,24 @@
 			<groupId>net.java.dev.jna</groupId>
 			<artifactId>jna-platform</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>19.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-core -->
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-core</artifactId>
+			<version>1.23</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-generator-annprocess -->
+		<dependency>
+			<groupId>org.openjdk.jmh</groupId>
+			<artifactId>jmh-generator-annprocess</artifactId>
+			<version>1.23</version>
+			<scope>provided</scope>
+		</dependency>
 
 	</dependencies>
 

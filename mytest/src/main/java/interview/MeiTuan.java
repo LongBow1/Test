@@ -15,6 +15,7 @@ public class MeiTuan {
 
         Map<Integer, List<String>> strMap = new HashMap();
         int tmpVal = 0;
+        strMap.values();
         for(int i=0;i<input.length;i++){
             tmpVal = compute(input[i]);
             if(strMap.containsKey(tmpVal)){

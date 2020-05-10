@@ -1,6 +1,7 @@
 package com.owner.me.mytest;
 
 import org.apache.http.impl.nio.bootstrap.ServerBootstrap;
+import org.springframework.context.annotation.Scope;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -199,6 +200,7 @@ public class SocketTest {
         }
     }
 
+    @Scope("singleton")
     public class NettyOioServer {
 
         public void server(int port) throws Exception {

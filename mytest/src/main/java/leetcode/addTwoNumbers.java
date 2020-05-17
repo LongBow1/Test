@@ -8,30 +8,82 @@ public class addTwoNumbers {
 
         ListNode l1 = initListNode(Arrays.asList(2,4,3));
         ListNode l2 = initListNode(Arrays.asList(5,6,4));
-        ListNode listNode = addTwoNumbers(l1,l2);
-        while (listNode.next != null){
+        ListNode listNode = addTwoNumbersV2(l1,l2);
+        while (listNode != null){
             System.out.println(listNode.val);
-            listNode.next = listNode.next.next;
+            listNode = listNode.next;
         }
     }
 
     public static class ListNode {
         int val;
+        ListNode head;
         ListNode next;
+        ListNode current;
 
+        ListNode(){
+
+        }
         ListNode(int x) {
             val = x;
+        }
+        ListNode(int x, ListNode n){
+            val = x;
+            next = n;
+        }
+
+        void add(int v){
+            if(head == null){
+                head = new ListNode(v);
+                current = head;
+            }else {
+                current.next = new ListNode(v);
+                current = current.next;
+            }
+
         }
 
     }
 
     static ListNode initListNode(List<Integer> arrays){
-        ListNode listNode = new ListNode(arrays.get(0));
-        for(int i=1;i< arrays.size(); i++){
-            listNode.next = new ListNode(arrays.get(i));
-            listNode.next = listNode.next.next;
+        ListNode listNode = new ListNode();
+        for(int i=0;i< arrays.size(); i++){
+            listNode.add(arrays.get(i));
         }
         return listNode;
+    }
+
+    public static ListNode addTwoNumbersV2(ListNode l1, ListNode l2){
+        ListNode t2 = l2;
+        boolean tenMark = false;
+        while (l1 != null){
+            l1.val = tenMark ? l1.val+1 : l1.val;
+            if(t2 != null){
+                l1.val = l1.val+t2.val;
+                t2 = t2.next;
+            }
+            if(l1.val >= 10){
+                tenMark = true;
+                l1.val = l1.val-10;
+            }
+            l1 = l1.next;
+        }
+        if (t2 != null){
+            l1.next = t2;
+            l1 = l1.next;
+            while (l1 != null){
+                l1.val = tenMark ? l1.val +1 : l1.val;
+                if(l1.val >= 10){
+                    tenMark = true;
+                    l1.val = l1.val-10;
+                }
+                l1 = l1.next;
+            }
+        }
+        if(tenMark){
+            l1.next = new ListNode(1);
+        }
+        return l1;
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
